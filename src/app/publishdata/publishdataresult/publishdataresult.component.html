@@ -1,0 +1,4 @@
+<p *ngIf="result; then success else failure">
+    <ng-template #success> Data successfully pushed to kafka</ng-template>
+    <ng-template #failure> Data push to kafka failed</ng-template>
+</p>
