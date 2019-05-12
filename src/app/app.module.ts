@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
+import { HighchartsChartComponent } from 'highcharts-angular' ;
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PublishdataComponent } from './publishdata/publishdata.component';
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     DashboardComponent,
     PublishdataComponent,
-    PublishdataresultComponent
+    PublishdataresultComponent,
+    HighchartsChartComponent
   ],
   imports: [
     BrowserModule,

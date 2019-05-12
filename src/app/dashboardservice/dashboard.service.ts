@@ -1,29 +1,21 @@
 import { Injectable } from '@angular/core';
-
-const dashboarddata = [
-    {id: 1,
-    name: 'salesCount',
-    type: 'linegraph',
-},
- {id: 2,
-    name: 'repairCount',
-    type: 'bargraph',
-}
-];
+import { DashboardData } from '../model/dashboarddata';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-    private dashdata;
-  constructor() { 
-    this.dashdata = dashboarddata;
+    private dashdata : DashboardData[];
+  constructor(private http: HttpClient) { 
+    //this.dashdata = dashboarddata;
   }
 
-  getDashboardData() 
+  getDashboardData() : Observable<DashboardData[]>
   { 
       console.log("From the service");
-      return this.dashdata;
+	  return this.http.get<any>("http://my-json-server.typicode.com/kousal/MyMockRestApis/posts",{});
+      //return this.dashdata;
   }
 
 

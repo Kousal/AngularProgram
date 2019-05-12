@@ -1,12 +1,14 @@
 <p>
     <button (click)="getDashboardData()">Click me </button>
     <table *ngIf="displayDashboardData==true">
-        <tr><td>Id</td><td>Name</td><td>Type</td><td>Mass</td></tr>
+        <tr><td>Id</td><td>Year</td><td>Model</td><td>Sales count</td></tr>
         <tr *ngFor="let dat of dashboardData">
             <td>{{dat.id}}</td>
-            <td>{{dat.name}}</td>
-            <td>{{dat.type}}</td>
-            <td>{{dat.mass}}</td>
+            <td>{{dat.year}}</td>
+            <td>{{dat.model}}</td>
+            <td>{{dat.sales}}</td>
         </tr>
     </table>
+
+    <div #charts></div> 
 
